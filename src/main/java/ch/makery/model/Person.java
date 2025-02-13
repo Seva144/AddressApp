@@ -17,6 +17,14 @@ public class Person {
     private final StringProperty city;
     private final ObjectProperty<LocalDate> birthday;
 
+
+    /**
+     * Default constructor.
+     */
+    public Person() {
+        this(null, null);
+    }
+
     /**
      * Конструктор с некоторыми начальными данными.
      *
