@@ -1,6 +1,8 @@
 module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.prefs;
+    requires jakarta.xml.bind;
 
 
     opens ch.makery to javafx.fxml;
