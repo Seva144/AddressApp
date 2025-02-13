@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.view.PersonOverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.view.PersonOverviewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -20,9 +20,9 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
                <children>
-                  <Label layoutX="36.0" layoutY="14.0" text="PersonDetails" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Label layoutX="36.0" layoutY="14.0" styleClass="label-bright" text="PersonDetails" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <GridPane layoutX="41.0" layoutY="53.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -51,9 +51,9 @@
                         <Label fx:id="birthdayLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <Button layoutX="351.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
-                  <Button layoutX="289.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="25.0" prefWidth="44.0" text="Edit" />
-                  <Button layoutX="227.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleNewPerson" text="New" />
+                  <Button layoutX="313.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
+                  <Button layoutX="221.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="33.0" prefWidth="79.0" text="Edit" />
+                  <Button layoutX="131.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleNewPerson" text="New" />
                </children>
             </AnchorPane>
         </items>

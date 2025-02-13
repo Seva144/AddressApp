@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.view.PersonEditController">
+<AnchorPane prefHeight="300.0" prefWidth="500.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.view.PersonEditController">
    <children>
       <GridPane layoutX="124.0" layoutY="54.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
         <columnConstraints>
@@ -34,6 +34,6 @@
          </children>
       </GridPane>
       <Button layoutX="425.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
-      <Button layoutX="354.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleOk" text="OK" />
+      <Button defaultButton="true" layoutX="354.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleOk" text="OK" />
    </children>
 </AnchorPane>
