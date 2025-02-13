@@ -71,8 +71,8 @@ public class RootLayoutController {
     }
 
     /**
-     * Открывает FileChooser, чтобы пользователь имел возможность
-     * выбрать файл, куда будут сохранены данные
+     * Открывает FileChooser, чтобы пользователь указал куда сохранить данные
+     * под каким именем
      */
     @FXML
     private void handleSaveAs() {
@@ -83,7 +83,7 @@ public class RootLayoutController {
                 "XML files (*.xml)", "*.xml");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        // Показываем диалог сохранения файла
+        // Показываем диалог сохранения файла указываем путь сохранения файла
         File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
 
         if (file != null) {

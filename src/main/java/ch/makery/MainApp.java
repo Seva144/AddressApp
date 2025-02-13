@@ -5,9 +5,6 @@ import ch.makery.model.PersonListWrapper;
 import ch.makery.view.PersonEditController;
 import ch.makery.view.PersonOverviewController;
 import ch.makery.view.RootLayoutController;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +17,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
 import java.util.prefs.Preferences;
@@ -234,8 +235,7 @@ public class MainApp extends Application {
      */
     public void savePersonDataToFile(File file) {
         try {
-            JAXBContext context = JAXBContext
-                    .newInstance(PersonListWrapper.class);
+            JAXBContext context = JAXBContext.newInstance(PersonListWrapper.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
@@ -248,7 +248,7 @@ public class MainApp extends Application {
 
             // Сохраняем путь к файлу в реестре.
             setPersonFilePath(file);
-        } catch (Exception e) { // catches ANY exception
+        } catch (JAXBException e) { // catches ANY exception
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Could not save data");
