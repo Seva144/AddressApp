@@ -112,7 +112,6 @@ public class PersonOverviewController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
             alert.setContentText("Please select a person in the table.");
-
             alert.showAndWait();
         }
     }
@@ -131,7 +130,7 @@ public class PersonOverviewController {
     }
 
     /**
-     * Вызывается, когда пользователь кликает по кнопка Edit...
+     * Вызывается, когда пользователь кликает Edit...
      * Открывает диалоговое окно для изменения выбранного адресата.
      */
     @FXML

@@ -21,7 +21,7 @@ public class Test {
     }
 
     /*Счетчик месяцев*/
-    @org.junit.Test
+
     public void testMyMethod() {
 
         List<Person> personData = new ArrayList<>();
