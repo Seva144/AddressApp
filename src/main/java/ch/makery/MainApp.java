@@ -11,14 +11,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
@@ -205,8 +204,7 @@ public class MainApp extends Application {
      */
     public void loadPersonDataFromFile(File file) {
         try {
-            JAXBContext context = JAXBContext
-                    .newInstance(PersonListWrapper.class);
+            JAXBContext context = JAXBContext.newInstance(PersonListWrapper.class);
             Unmarshaller um = context.createUnmarshaller();
 
             // Чтение XML из файла и демаршализация.
@@ -248,15 +246,14 @@ public class MainApp extends Application {
 
             // Сохраняем путь к файлу в реестре.
             setPersonFilePath(file);
-        } catch (JAXBException e) { // catches ANY exception
+        } catch (Exception e) {
+            System.err.println("Error during marshalling: " + e.getMessage());// catches ANY exception
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Could not save data");
             alert.setContentText("Could not save data to file:\n" + file.getPath());
-
             alert.showAndWait();
         }
     }
-
 
 }

@@ -2,11 +2,14 @@ package ch.makery.model;
 
 import javafx.beans.property.*;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 /**
  * Класс-модель для адресата (Person)
  * */
+@XmlRootElement(name = "person")
 public class Person {
 
     private final StringProperty firstName;
@@ -42,7 +45,7 @@ public class Person {
         this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
     }
 
-
+    @XmlElement(name = "first_name")
     public String getFirstName() {
         return firstName.get();
     }
@@ -55,6 +58,7 @@ public class Person {
         return firstName;
     }
 
+    @XmlElement(name = "last_name")
     public String getLastName() {
         return lastName.get();
     }
@@ -67,6 +71,7 @@ public class Person {
         this.lastName.set(lastName);
     }
 
+    @XmlElement(name = "street")
     public String getStreet() {
         return street.get();
     }
@@ -79,6 +84,7 @@ public class Person {
         return street;
     }
 
+    @XmlElement(name = "postal_code")
     public int getPostalCode() {
         return postalCode.get();
     }
@@ -91,6 +97,7 @@ public class Person {
         return postalCode;
     }
 
+    @XmlElement(name = "city")
     public String getCity() {
         return city.get();
     }
@@ -103,6 +110,7 @@ public class Person {
         return city;
     }
 
+    @XmlElement(name = "birthday")
     public LocalDate getBirthday() {
         return birthday.get();
     }
