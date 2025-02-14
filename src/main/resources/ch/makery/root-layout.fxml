@@ -16,9 +16,9 @@
                   <MenuItem fx:id="handleExit" mnemonicParsing="false" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Statistics">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#handleShowBirthdayStatistics" text="ShowStatics" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

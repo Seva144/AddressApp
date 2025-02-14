@@ -5,6 +5,7 @@ import ch.makery.model.PersonListWrapper;
 import ch.makery.view.PersonEditController;
 import ch.makery.view.PersonOverviewController;
 import ch.makery.view.RootLayoutController;
+import ch.makery.view.BirthdayStatisticsController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -81,10 +82,10 @@ public class MainApp extends Application {
         primaryStage.show();
 
 //         Пытается загрузить последний открытый файл с адресатами.
-        File file = getPersonFilePath();
-        if (file != null) {
-            loadPersonDataFromFile(file);
-        }
+//        File file = getPersonFilePath();
+//        if (file != null) {
+//            loadPersonDataFromFile(file);
+//        }
     }
 
     /**
@@ -143,6 +144,33 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    /**
+     * Открывает диалоговое окно для вывода статистики дней рождений.
+     */
+    public void showBirthdayStatistics() {
+        try {
+            // Загружает fxml-файл и создаёт новую сцену для всплывающего окна.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("birthday-statistic.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Birthday Statistics");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Передаёт адресатов в контроллер.
+            BirthdayStatisticsController controller = loader.getController();
+            controller.setPersonData(personData);
+
+            dialogStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -255,5 +283,7 @@ public class MainApp extends Application {
             alert.showAndWait();
         }
     }
+
+
 
 }

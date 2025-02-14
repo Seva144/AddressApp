@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+import static test.Test.between;
+
 /**
  * Класс-модель для адресата (Person)
  * */
@@ -44,7 +46,7 @@ public class Person {
         this.street = new SimpleStringProperty("какая-то улица");
         this.postalCode = new SimpleIntegerProperty(1234);
         this.city = new SimpleStringProperty("какой-то город");
-        this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
+        this.birthday = new SimpleObjectProperty<LocalDate>(between(LocalDate.of(1995, 1, 1), LocalDate.now()));
     }
 
     @XmlElement(name = "first_name")
