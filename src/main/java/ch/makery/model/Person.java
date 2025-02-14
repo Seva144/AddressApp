@@ -1,9 +1,11 @@
 package ch.makery.model;
 
+import ch.makery.util.LocalDateAdapter;
 import javafx.beans.property.*;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
@@ -111,6 +113,7 @@ public class Person {
     }
 
     @XmlElement(name = "birthday")
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getBirthday() {
         return birthday.get();
     }

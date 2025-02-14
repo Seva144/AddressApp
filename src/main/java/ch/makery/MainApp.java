@@ -80,7 +80,7 @@ public class MainApp extends Application {
 
         primaryStage.show();
 
-        // Пытается загрузить последний открытый файл с адресатами.
+//         Пытается загрузить последний открытый файл с адресатами.
         File file = getPersonFilePath();
         if (file != null) {
             loadPersonDataFromFile(file);
