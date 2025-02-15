@@ -1,8 +1,8 @@
 module ch.makery {
-    requires java.xml.bind; // Require JAXB
-    requires javafx.controls;
-    requires javafx.fxml;
     requires java.prefs;
+    requires javafx.fxml;
+    requires java.xml.bind;
+    requires javafx.controls;
 
     opens ch.makery to javafx.fxml;
     opens ch.makery.model to java.xml.bind;
